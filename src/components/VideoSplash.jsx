@@ -22,6 +22,7 @@ const StyledVideo = styled.video`
     object-fit: cover;
     width: 100%;
     height: 100%;
+    z-index: 1;
     mix-blend-mode: overlay;
     filter: ${props => props.overlay && 'grayscale(100%)'};
 `;
@@ -43,7 +44,7 @@ const TextContainer = styled.div`
     
 `;
 
-const TestPage = ({overlay = 'darkblue'}) => { 
+const VideoSplash = ({overlay = 'darkblue'}) => { 
     return (
         <PageWrapper>
           <Container overlay={overlay}>
@@ -60,4 +61,4 @@ const TestPage = ({overlay = 'darkblue'}) => {
         </PageWrapper>
     ); 
 };
-export default TestPage;
+export default VideoSplash;

@@ -10,9 +10,10 @@ const ScrollSectionContainer = styled.div.attrs((props) => ({
     display: flex;
     flex-direction: column;
     align-items: center;
+
 @media(max-width: ${props => props.theme.breakpoints.lg}) {
-    padding-left: ${props => props.theme.spacing.lg};
-    padding-right: ${props => props.theme.spacing.lg};
+    padding-left: ${props => props.theme.spacing.md};
+    padding-right: ${props => props.theme.spacing.md};
 }
 @media(max-width: ${props => props.theme.breakpoints.md}) {
     padding-left: ${props => props.theme.spacing.md};
@@ -51,9 +52,9 @@ const ScrollSectionHeading = ({ children, position = 'center'  }) => {
     );
 };
 
-const ScrollSection = ({ children, color, heading }) => {
+const ScrollSection = ({ className, children, color, heading }) => {
     return (
-        <ScrollSectionContainer color={color}>
+        <ScrollSectionContainer className={className} color={color}>
           <ScrollSectionInnerContainer>
             { heading ? <ScrollSectionHeading children={heading}/> : null }
             { children }

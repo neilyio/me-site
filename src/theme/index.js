@@ -1,7 +1,7 @@
 const spacing = {
     xl: '6rem',
     lg: '4rem',
-    md: '2rem',
+    md: '2.75rem',
     sm: '1rem',
     xs: '0.5rem',
 };
@@ -88,40 +88,44 @@ const palette = {
 const shadows = {};
 
 const typography =  {
-    fontFamilyPrimary: "PT Serif",
+    fontFamilyPrimary: "Exo",
     fontFamilySecondary: "Open Sans",
     h2: {
         color: 'black',
-        fontFamily: "PT Serif",
+        fontFamily: "Exo",
         fontWeight: 700,
         fontSize: "4em",
+        fontStyle: "italic",
         lineHeight: "1.25em",
         letterSpacing: null,
         margin: "0"
     },
     h3: {
         color: 'black',
-        fontFamily: "PT Serif",
+        fontFamily: "Exo",
         fontWeight: 700,
-        fontSize: "2.75em",
+        fontSize: "2.5em",
+        fontStyle: "italic",
         lineHeight: "1.25em",
         letterSpacing: null,
         margin: "0"
     },
     h4: {
         color: 'black',
-        fontFamily: "PT Serif",
+        fontFamily: "Exo",
         fontWeight: 700,
         fontSize: "1.5em",
+        fontStyle: "italic",
         lineHeight: "1.25em",
         letterSpacing: null,
         margin: "0"
     },
     h5: {
         color: 'black',
-        fontFamily: "Open Sans",
+        fontFamily: "Exo",
         fontWeight: 300,
-        fontSize: "1.5em",
+        fontSize: "1.2em",
+        fontStyle: "italic",
         lineHeight: "1.25em",
         letterSpacing: null,
         margin: "0"
@@ -131,6 +135,7 @@ const typography =  {
         fontFamily: "Open Sans",
         fontWeight: 300,
         fontSize: "1em",
+        fontStyle: "normal",
         lineHeight: "1.9em",
         letterSpacing: null,
         margin: "0"
@@ -140,6 +145,7 @@ const typography =  {
         fontFamily: "Open Sans",
         fontWeight: 300,
         fontSize: "0.75em",
+        fontStyle: "normal",
         lineHeight: "1.25em",
         letterSpacing: null,
         margin: "0"

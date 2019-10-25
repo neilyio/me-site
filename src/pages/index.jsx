@@ -1,5 +1,4 @@
 import React from "react";
-import HomeSplash from "../components/HomeSplash.jsx";
 import ScrollSection, { ScrollSectionHeading } from "../layouts/ScrollSection.jsx";
 import CenteredText from "../components/CenteredText.jsx";
 import Factoid from "../components/Factoid.jsx";
@@ -12,10 +11,13 @@ import ScaryHallway from "../images/scary_hallway.jpeg";
 import { testText1, sandersBody, walesBody, rowlingBody, stories } from "../fakedata/index.jsx";
 import StoryCardGallery from "../components/StoryCardGallery.jsx";
 import PageWrapper from "../layouts/PageWrapper.jsx";
+import Footer from "../components/Footer.jsx";
+import VideoSplash from "../components/VideoSplash.jsx";
+import theme from "../theme";
 
 const IndexPage = () => (
       <PageWrapper>
-        <HomeSplash/>
+        <VideoSplash/>
         <ScrollSection>     
           <CenteredText>
             {testText1}
@@ -44,6 +46,7 @@ const IndexPage = () => (
           <ScrollSectionHeading children={"Featured Insights"} position="bottom"/>
           <StoryCardGallery heroes={2} stories={stories}/>
         </ScrollSection>
+        <Footer/>
       </PageWrapper>
 );
 

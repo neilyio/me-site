@@ -35,9 +35,13 @@ module.exports = {
                         family: `Open Sans`,
                         variants: [`300`, `300i`, `400`, `400i`, `600`]
                     },
+                    // {
+                    //     family: `PT Serif`,
+                    //     variants: [`700`]
+                    // },
                     {
-                        family: `PT Serif`,
-                        variants: [`700`]
+                        family: `Exo`,
+                        variants: [`400i`, `700i`]
                     },
                 ],
             },
