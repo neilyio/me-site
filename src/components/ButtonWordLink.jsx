@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { SmallBoldBodyLink } from "../typography";
 import { FaArrowRight } from "react-icons/fa";
 
-const StyledButton = styled(SmallBoldBodyLink)`
+const StyledButton = styled.p`
 display: flex;
 align-items: center;
+font-weight: bold;
 `;
 
 const StyledArrow = styled(FaArrowRight)`

@@ -13,8 +13,20 @@ const Container = styled.div`
     overflow: hidden;
     position: relative;
     background-color: ${props => props.overlay};
-    z-index: -1;
-}
+    box-sizing: border-box;
+    padding-left: ${props => props.theme.spacing.xl}
+    padding-right: ${props => props.theme.spacing.xl};
+
+    @media(max-width: ${props => props.theme.breakpoints.md}) {
+        padding-left: ${props => props.theme.spacing.lg};
+        padding-right: ${props => props.theme.spacing.lg};
+
+    }
+`;
+
+
+const buffer = `
+
 `;
 
 const StyledVideo = styled.video`
@@ -36,27 +48,44 @@ const StyledSubTitle = styled.p`
     color: white
 `;
 
+const TitleContainer = styled.div`
+    @media(max-width: ${props => props.theme.breakpoints.md}) {
+        max-width: 32em;    
+    }
+`;
+
 const TextContainer = styled.div`
     display: flex;
     flex-direction: column;
     max-width: 32em;
     text-align: center;
+
+    @media(max-width: ${props => props.theme.breakpoints.md}) {
+        text-align: left;        
+    }
     
 `;
+
+const HeroTitleContainer = styled(TextContainer)`
+    @media(min-width: ${props => props.theme.breakpoints.md}) {
+        max-width: 100%;    
+    }
+`;
+
 
 const VideoSplash = ({overlay = 'darkblue'}) => { 
     return (
         <PageWrapper>
           <Container overlay={overlay}>
-              <StyledTitle>
-                We are all Media Empire.
-              </StyledTitle>
+            <HeroTitleContainer>
+              <StyledTitle>We are all Media Empire.</StyledTitle>
+            </HeroTitleContainer>          
             <TextContainer>
               <StyledSubTitle>
                 Unifying the most important achievements in techonology, culture, intelligence, and militarized leadership.  Connecting the security of international dominance with the assurance of continued growth.<br/><br/>One spirit. One vision. One corporation.
               </StyledSubTitle>
             </TextContainer>
-            <StyledVideo src={VideoPlexus} autoPlay={true} overlay={overlay} loop/>
+            <StyledVideo src={VideoPlexus} overlay={overlay} autoPlay loop muted/>
           </Container>
         </PageWrapper>
     ); 

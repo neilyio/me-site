@@ -7,31 +7,65 @@ const InfoCardContainer = styled.div.attrs((props) => ({
 }))`
 
     display: flex;
+    position: relative;
     flex-direction: column;
     align-items: center;
     background: ${props => props.background};
-    height: 32em;
+    width: 100%;
+    height: 100%;
     padding: 3em;
     box-sizing: border-box;
     text-align: center;
+    z-index: 1;
+
+    /* Box shadow settings for hover */
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        box-shadow: ${props => props.theme.shadows.primary.main};
+        opacity: 0;
+        z-index: -1;
+        transition:
+            all 
+            ${props => props.theme.transitions.duration.standard}
+            ${props => props.theme.transitions.easing.easeIn};
+    }
+
+    &:hover::after {
+        opacity: 1;
+    }
 `;
 
-const BaseImage = styled.img`
-    position: relative;
-    height: 100%;
+const InfoCardPhoto = styled.img`
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: ${props => props.theme.spacing.md};
+    clip-path: circle(100px at center);
 `;
 
-const InfoCardHeading = styled(SmallHeading)`
+const InfoCardHeading = styled.h4`
     margin: 0;
-    margin-bottom: 0.5em;    
+    margin-bottom: 0.5em;
+
+    &:hover {
+        color: ${props => props.theme.palette.primary.main};
+    }
 `;
 
-const InfoCardSubHeading = styled(SmallBoldBody)`
+const InfoCardSubHeading = styled.small`
     margin: 0;
+    font-weight: bold;
 `;
 
-const InfoCardBody = styled(SmallNormalBody)`
+const InfoCardBody = styled.p`
     margin: 0;
+    line-height: 1.5em;
 `;
 
 const InfoCardDivider = styled.div`
@@ -41,47 +75,16 @@ const InfoCardDivider = styled.div`
     height: 1px;
 `;
 
-const InfoCard = ({ children, heading, subHeading, body }) => {
+const InfoCard = ({ imgSrc, heading, subHeading, body }) => {
   return (
       <InfoCardContainer>
-        { children }
+        { imgSrc && <InfoCardPhoto src={imgSrc}/> }
         <InfoCardHeading children={heading}/>
         <InfoCardSubHeading children={subHeading}/>
         <InfoCardDivider/>
         <InfoCardBody children={body}/>
       </InfoCardContainer>
   );
-};
-
-const ImageContainer = styled.div.attrs((props) => ({
-    offsetLeft: props.offsetX,
-    offsetTop: props.offsetY,
-    scale: props.scale
-}))`
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    align-items: center;
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    clip-path: circle(100px at center);
-    margin-bottom: 3em;
-
-    & > ${BaseImage} {
-      left:   ${props => props.offsetX};
-      top:    ${props => props.offsetY};
-      height: ${props => props.scale};
-    }
-`;
-
-
-const InfoCardPhoto = ({ src, offsetX, offsetY, scale }) => {
-    return (
-        <ImageContainer offsetX={offsetX} offsetY={offsetY} scale={scale}>
-          <BaseImage src={src}/>
-        </ImageContainer>
-    );
 };
 
 export { InfoCardPhoto, InfoCardContainer };

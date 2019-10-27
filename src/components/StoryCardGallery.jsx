@@ -33,7 +33,7 @@ const StoryContainer = styled.div`
         left: -25px;
         width: calc(100% + 50px);
         height: calc(100% + 50px);
-        box-shadow: 0 5px 35px rgba(0, 0, 0, 0.3);
+        box-shadow: ${props => props.theme.shadows.primary.main};
         opacity: 0;
         z-index: -1;
         transition:

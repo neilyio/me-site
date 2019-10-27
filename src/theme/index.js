@@ -1,4 +1,5 @@
 const spacing = {
+    xxl: '9em',
     xl: '6rem',
     lg: '4rem',
     md: '2.75rem',
@@ -85,7 +86,11 @@ const palette = {
     },
 };
 
-const shadows = {};
+const shadows = {
+    primary: {
+        main:  "0 5px 35px rgba(0, 41, 132, 0.3)",
+    }
+};
 
 const typography =  {
     fontFamilyPrimary: "Exo",

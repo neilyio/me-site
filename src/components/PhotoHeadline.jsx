@@ -14,7 +14,6 @@ const Container = styled.div`
     }
 `;
 
-
 const BackgroundImageContainer = styled.div`
     width: 100%;
     height: 400px;
@@ -23,7 +22,9 @@ const BackgroundImageContainer = styled.div`
 
 const BackgroundImage = styled.img`
     width: 100%;
+    height: 100%;
     position: relative;
+    object-fit: cover;
 `;
 
 const TextBoxContainer = styled.div`
@@ -44,16 +45,7 @@ const TextBoxContainer = styled.div`
 }
 `;
 
-const TextBoxLargeHeading = styled(MediumHeading)`
-    font-family: "PT Serif";
-    margin-bottom: ${props => props.theme.spacing.md};
-`;
-
-const TextBoxSubHeading = styled(ExtraSmallHeading)`
-    margin-bottom: ${props => props.theme.spacing.md};
-`;
-
-const TextBoxBody = styled(NormalBody)`
+const TextContainer = styled.div`
     margin-bottom: ${props => props.theme.spacing.md};
 `;
 
@@ -69,10 +61,10 @@ const TextBox = ({ src, heading, subHeading, body, overlayHeading, linkText, lin
     }
     return (
         <TextBoxContainer>
-          {heading ? <TextBoxLargeHeading children={heading}/> : null}
-          {subHeading ? <TextBoxSubHeading children={subHeading}/> : null}
-          {body ? <TextBoxBody children={body}/> : null}
-          {linkText ? <ButtonWordLink children={linkText} href={linkURL}/> : null}
+          {heading && <TextContainer><h3 children={heading}/></TextContainer>}
+          {subHeading && <TextContainer><h5 children={subHeading}/></TextContainer>}
+          {body && <TextContainer><p children={body}/></TextContainer>}
+          {linkText && <TextContainer><ButtonWordLink children={linkText} href={linkURL}/></TextContainer>}
         </TextBoxContainer>        
     );
 };
