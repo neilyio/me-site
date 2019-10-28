@@ -14,10 +14,12 @@ import PageWrapper from "../layouts/PageWrapper.jsx";
 import Footer from "../components/Footer.jsx";
 import VideoSplash from "../components/VideoSplash.jsx";
 import MenuBar from "../components/MenuBar.jsx";
+import LockScreen from "../components/LockScreen.jsx";
 import theme from "../theme";
 
 const IndexPage = () => (
     <PageWrapper>
+      <LockScreen/>
       <MenuBar/>
       <VideoSplash/>
       <ScrollSection>     

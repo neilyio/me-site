@@ -122,7 +122,7 @@ const Footer = () => (
               <MediaEmpireLogo>Media<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Empire</MediaEmpireLogo>
             </MediaEmpireLogoContainer>    
             <SubscribeContainer>
-              <InputForm/>
+              <InputForm title='Subscribe to our latest insights'/>
               <SquareButton paddingX={false}>
                 <FaAngleDoubleRight/>
               </SquareButton>
