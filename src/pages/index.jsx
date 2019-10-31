@@ -19,7 +19,7 @@ import theme from "../theme";
 
 const IndexPage = () => (
     <PageWrapper>
-      <LockScreen/>
+
       <MenuBar/>
       <VideoSplash/>
       <ScrollSection>     
